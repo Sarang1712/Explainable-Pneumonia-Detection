@@ -18,7 +18,7 @@ Through sequential fine-tuning, the model's performance was optimized from a bas
 ### Clinical Validation (Confusion Matrix)
 *The matrix below visualizes the model's high sensitivity on the unseen test set of 523 images.*
 
-![Final Confusion Matrix](assets/image_b89542.png) 
+![Final Confusion Matrix](assets/final_cm.png) 
 
 ---
 
@@ -37,7 +37,7 @@ To build trust in the automated diagnostic process, custom PyTorch forward and b
 
 **Visual Verification:** The heatmaps below confirm the model correctly distributes its attention across clear lung parenchyma for "Normal" predictions, and sharply focuses on dense pulmonary opacities for "Pneumonia" predictions.
 
-![Grad-CAM Visualization](assets/image_b8919f.jpg)
+![Grad-CAM Visualization](assets/final_gradcam.png)
 
 ---
 
@@ -49,7 +49,7 @@ Robust engineering requires understanding system limitations. An Edge Case Study
 1.  **Anatomical Distraction:** In specific edge cases, the model's attention was drawn away from the lung fields by dense normal anatomy, such as the lower mediastinum or the intersection of the heart shadow and the diaphragm.
 2.  **Implication:** The model occasionally confuses extreme structural density with pathological opacities. 
 
-![Failure Analysis](assets/image_b90219.jpg)
+![Failure Analysis](assets/error_gradcam.png)
 
 ---
 
