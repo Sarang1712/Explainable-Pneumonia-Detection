@@ -55,11 +55,12 @@ Robust engineering requires understanding system limitations. An Edge Case Study
 
 ## 💻 Quick Start: Inference Engine
 
-  This repository includes a standalone inference script (`inference_engine.py`) designed to run diagnostics on new, unseen X-ray images, outputting both the prediction and the Grad-CAM overlay.
-  
-  ### 1. Install Dependencies
-  ```bash
-  pip install -r requirements.txt
+### 1. Download the Model Weights
+Download the pre-trained weights (`pneumonia_final_best.pth`) from the [Releases tab](https://github.com/Sarang1712/Explainable-Pneumonia-Detection/releases/tag/v1.0) of this repository and place them in the `model/` directory.
+
+### 2. Install Dependencies
+```bash
+pip install -r requirements.txt
 ```
 
 ### 2. Run Diagnostics
