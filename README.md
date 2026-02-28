@@ -63,13 +63,21 @@ Download the pre-trained weights (`pneumonia_final_best.pth`) from the [Releases
 pip install -r requirements.txt
 ```
 
-### 2. Run Diagnostics
+### 3. Run Diagnostics
+Open `inference_engine.py` and verify the file paths at the very bottom of the script point to your chosen X-ray image and model weights:
+```python
+if __name__ == "__main__":
+    TEST_IMAGE_PATH = "sample_xray.jpeg" # Change to your image name
+    MODEL_WEIGHTS_PATH = "pneumonia_final_best.pth"
+    
+    run_inference(TEST_IMAGE_PATH, MODEL_WEIGHTS_PATH)
+```
+Then, execute the script from your terminal:
 ```bash
-python inference_engine.py --image_path sample_xray.jpeg --model_path model/pneumonia_final_best.pth
+python inference_engine.py
 ```
 
 ---
-
 ## 🔮 Future Scope & Deployment Optimization
 
 * **Edge AI & TinyML Deployment:** The current ResNet-18 architecture is lightweight enough to be optimized for embedded systems. Future work involves applying Post-Training Quantization (PTQ) to convert weights to INT8, enabling energy-aware, offline inference directly on hardware accelerators.
